@@ -15,5 +15,8 @@ namespace DindinAPI.Context
         }
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Aula> Aulas { get; set; }
+
     }
+
+    
 }

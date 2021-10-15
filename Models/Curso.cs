@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DindinAPI.Models
 {
@@ -12,10 +14,13 @@ namespace DindinAPI.Models
         [Required]
         public string AulaDescricao { get; set; }
         [Required]
+        public string AulaTitulo { get; set; }
+        [Required]
         public string AulaLink { get; set; }
 
         public int CursoId { get; set; }
-        public Curso Curso { get; set; }
+        [JsonIgnore]
+        public Curso Cursos { get; set; }
     }
     public class Curso
     {
@@ -29,6 +34,9 @@ namespace DindinAPI.Models
         [Required]
         public string CursoDescricao { get; set; }
         [Required]
-        public ICollection<Aula> Aula { get; set; } 
+
+        public List<Aula> Aula { get; set; } 
     }
+
+   
 }
