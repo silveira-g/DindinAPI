@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DindinAPI.Context;
+using DindinAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,8 @@ namespace DindinAPI
             services.AddDbContext<AppDbContext>(options =>   
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddScoped<IAulaService, AulasService>();
+            services.AddScoped<ICursoService, CursosService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
