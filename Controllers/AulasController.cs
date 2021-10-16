@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DindinAPI.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class AulasController : ControllerBase
@@ -34,20 +35,20 @@ namespace DindinAPI.Controllers
                 return BadRequest("Request inválido");
             }
         }
-    [HttpGet("{cursoId:int}", Name = "GetAulasPorCurso")]
-        public async Task<ActionResult<IAsyncEnumerable<Aula>>> GetAulasByCursoId(int cursoid)
+        [HttpGet("api/AulasPorCurso/{CursoId:int}", Name = "GetAulasPorCurso")]
+        public async Task<ActionResult<IAsyncEnumerable<Aula>>> GetAulasByCursoId(int CursoId)
         {
             try
             {
                 
-                var aulas = await _aulaService.GetAulasByCursoId(cursoid);
+                var aulas = await _aulaService.GetAulasByCursoId(CursoId);
                 if(aulas!=null)
                 {
                     return Ok(aulas);
                 }
                 else
                 {
-                    return NotFound($"Não foi encontrado aulas com Id de Curso= {cursoid}");
+                    return NotFound($"Não foi encontrado aulas com Id de Curso= {CursoId}");
                 }
             }
             catch
@@ -59,8 +60,8 @@ namespace DindinAPI.Controllers
 
         [HttpGet("{id:int}", Name = "GetAula")]
         public async Task<ActionResult<Aula>> GetAula
-                (int id)
-        {
+              (int id)
+       {
             try
             {
                 var aula = await _aulaService.GetAula(id);
@@ -68,7 +69,7 @@ namespace DindinAPI.Controllers
                     return NotFound($"Não existe aula com id= {id}");
                 return Ok(aula);
             }
-            catch
+             catch
             {
 
                 return BadRequest("Request inválido");
@@ -90,7 +91,7 @@ namespace DindinAPI.Controllers
             }
         }
 
-        [HttpPut("{id: int}")]
+        [HttpPut("{id:int}")]
         public async Task<ActionResult> Edit(int id, [FromBody] Aula aula)
         {
             try
@@ -112,7 +113,7 @@ namespace DindinAPI.Controllers
             }
         }
 
-        [HttpDelete("{id: int}")]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
             try

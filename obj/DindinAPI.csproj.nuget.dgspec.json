@@ -40,6 +40,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Glimpse.AspNet": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            },
+            "Microsoft.AspNet.WebApi.Core": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.11, )"

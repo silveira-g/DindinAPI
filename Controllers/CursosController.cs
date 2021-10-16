@@ -68,7 +68,7 @@ namespace DindinAPI.Controllers
             }
         } 
 
-        [HttpPut("{id: int}")]
+        [HttpPut("{id:int}")]
         public async Task<ActionResult> Edit(int id, [FromBody] Curso curso)
         {
             try
@@ -90,7 +90,7 @@ namespace DindinAPI.Controllers
             }
         }
 
-        [HttpDelete("{id: int}")]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
             try
