@@ -103,7 +103,7 @@ namespace DindinAPI.Controllers
                 }
                 else
                 {
-                    return NotFound($"Aluno com id= {id} não localizado");
+                    return NotFound($"Curso com id= {id} não localizado");
                 }
             }
             catch
