@@ -35,7 +35,7 @@ namespace DindinAPI.Controllers
                 return BadRequest("Request inválido");
             }
         }
-        [HttpGet("api/AulasPorCurso/{CursoId:int}", Name = "GetAulasPorCurso")]
+        [HttpGet("/AulasPorCurso/{CursoId:int}", Name = "GetAulasPorCurso")]
         public async Task<ActionResult<IAsyncEnumerable<Aula>>> GetAulasByCursoId(int CursoId)
         {
             try

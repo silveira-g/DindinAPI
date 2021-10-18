@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nNtxBJRm/eqUloeI1Sf1zf+5e5JbV+wWtBfR/gW9HqEOffRZgPfcc7Qg8BuezXkXehVUDbjM6+6fnDDNDf1n2Q==",
+  "dgSpecHash": "mYkkcNR0pReB8g0qPCTFodzpWva4niyE09Le6TP0c4J4v0UAcY7RPVqbUn2j3vVo9xTJi/wDa/qcIOkdEmcZSQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\guilh\\source\\repos\\DindinAPI\\DindinAPI.csproj",
+  "projectFilePath": "C:\\Users\\guilh\\Desktop\\Nova pasta\\DindinAPI\\DindinAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\guilh\\.nuget\\packages\\glimpse\\1.8.6\\glimpse.1.8.6.nupkg.sha512",
     "C:\\Users\\guilh\\.nuget\\packages\\glimpse.aspnet\\1.9.2\\glimpse.aspnet.1.9.2.nupkg.sha512",

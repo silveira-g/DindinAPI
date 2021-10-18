@@ -33,7 +33,6 @@ namespace DindinAPI.Models
         public string ImagemCapa { get; set; }
         [Required]
         public string CursoDescricao { get; set; }
-        [Required]
 
         public List<Aula> Aula { get; set; } 
     }
