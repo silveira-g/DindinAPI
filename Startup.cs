@@ -36,7 +36,7 @@ namespace DindinAPI
                 options.AddPolicy(name: allowOrigin, 
                     builder =>
                 {
-                    builder.AllowAnyHeader().AllowAnyMethod();
+                    builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:8080/");
                 });
             });
             services.AddDbContext<AppDbContext>(options =>   
