@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DindinAPI.Models;
 using DindinAPI.Services;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,8 @@ namespace DindinAPI.Controllers
             _cursoService = cursoService;
         }
 
+
+        [EnableCors]
         [HttpGet]
         public async Task<ActionResult<IAsyncEnumerable<Curso>>> GetCursos()
         {
@@ -35,6 +38,7 @@ namespace DindinAPI.Controllers
             }
         }
 
+        [EnableCors]
         [HttpGet("{id:int}", Name ="GetCurso")]
         public async Task<ActionResult<Curso>> GetCurso
             (int id)
@@ -53,6 +57,7 @@ namespace DindinAPI.Controllers
             }
         }
 
+        [EnableCors]
         [HttpPost]
         public async Task<ActionResult> Create(Curso curso)
         {
@@ -66,8 +71,9 @@ namespace DindinAPI.Controllers
 
                 return BadRequest("Request inválido");
             }
-        } 
+        }
 
+        [EnableCors]
         [HttpPut("{id:int}")]
         public async Task<ActionResult> Edit(int id, [FromBody] Curso curso)
         {
@@ -90,6 +96,8 @@ namespace DindinAPI.Controllers
             }
         }
 
+
+        [EnableCors]
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
