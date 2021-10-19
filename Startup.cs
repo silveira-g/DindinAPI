@@ -18,7 +18,9 @@ using Microsoft.OpenApi.Models;
 namespace DindinAPI
 {
     public class Startup
+
     {
+        readonly string allowOrigin = "_myAllowOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -29,7 +31,14 @@ namespace DindinAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: allowOrigin, 
+                    builder =>
+                {
+                    builder.AllowAnyHeader().AllowAnyMethod();
+                });
+            });
             services.AddDbContext<AppDbContext>(options =>   
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -55,6 +64,8 @@ namespace DindinAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(allowOrigin);
 
             app.UseAuthorization();
 

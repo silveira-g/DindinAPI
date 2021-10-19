@@ -278,3 +278,5 @@ C:\Users\guilh\Desktop\Nova pasta\DindinAPI\obj\Debug\net5.0\DindinAPI.dll
 C:\Users\guilh\Desktop\Nova pasta\DindinAPI\obj\Debug\net5.0\ref\DindinAPI.dll
 C:\Users\guilh\Desktop\Nova pasta\DindinAPI\obj\Debug\net5.0\DindinAPI.pdb
 C:\Users\guilh\Desktop\Nova pasta\DindinAPI\obj\Debug\net5.0\DindinAPI.genruntimeconfig.cache
+C:\Users\guilh\Desktop\Nova pasta\DindinAPI\bin\Debug\net5.0\System.Web.Cors.dll
+C:\Users\guilh\Desktop\Nova pasta\DindinAPI\bin\Debug\net5.0\System.Web.Http.Cors.dll
