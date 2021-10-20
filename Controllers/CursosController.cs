@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DindinAPI.Controllers
 {
+    [EnableCors("CorsPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class CursosController : ControllerBase
