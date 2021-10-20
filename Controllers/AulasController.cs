@@ -22,7 +22,6 @@ namespace DindinAPI.Controllers
             _aulaService = aulaService;
         }
 
-        [EnableCors]
         [HttpGet]
         public async Task<ActionResult<IAsyncEnumerable<Aula>>> GetAulas()
         {
@@ -37,7 +36,6 @@ namespace DindinAPI.Controllers
                 return BadRequest("Request inválido");
             }
         }
-        [EnableCors]
         [HttpGet("/api/AulasPorCurso/{CursoId:int}", Name = "GetAulasPorCurso")]
         public async Task<ActionResult<IAsyncEnumerable<Aula>>> GetAulasByCursoId(int CursoId)
         {
@@ -61,7 +59,6 @@ namespace DindinAPI.Controllers
             }
         }
 
-        [EnableCors]
         [HttpGet("{id:int}", Name = "GetAula")]
         public async Task<ActionResult<Aula>> GetAula
               (int id)
@@ -80,7 +77,6 @@ namespace DindinAPI.Controllers
             }
         }
 
-        [EnableCors]
         [HttpPost]
         public async Task<ActionResult> Create(Aula aula)
         {
@@ -96,7 +92,6 @@ namespace DindinAPI.Controllers
             }
         }
 
-        [EnableCors]
         [HttpPut("{id:int}")]
         public async Task<ActionResult> Edit(int id, [FromBody] Aula aula)
         {
@@ -119,7 +114,6 @@ namespace DindinAPI.Controllers
             }
         }
 
-        [EnableCors]
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {

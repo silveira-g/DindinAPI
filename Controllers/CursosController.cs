@@ -22,7 +22,6 @@ namespace DindinAPI.Controllers
         }
 
 
-        [EnableCors]
         [HttpGet]
         public async Task<ActionResult<IAsyncEnumerable<Curso>>> GetCursos()
         {
@@ -38,7 +37,7 @@ namespace DindinAPI.Controllers
             }
         }
 
-        [EnableCors]
+
         [HttpGet("{id:int}", Name ="GetCurso")]
         public async Task<ActionResult<Curso>> GetCurso
             (int id)
@@ -57,7 +56,7 @@ namespace DindinAPI.Controllers
             }
         }
 
-        [EnableCors]
+
         [HttpPost]
         public async Task<ActionResult> Create(Curso curso)
         {
@@ -73,7 +72,7 @@ namespace DindinAPI.Controllers
             }
         }
 
-        [EnableCors]
+
         [HttpPut("{id:int}")]
         public async Task<ActionResult> Edit(int id, [FromBody] Curso curso)
         {
@@ -97,7 +96,7 @@ namespace DindinAPI.Controllers
         }
 
 
-        [EnableCors]
+
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {

@@ -20,7 +20,6 @@ namespace DindinAPI
     public class Startup
 
     {
-        readonly string allowOrigin = "_myAllowOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,7 +30,15 @@ namespace DindinAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
+            });
             services.AddDbContext<AppDbContext>(options =>   
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -58,13 +65,7 @@ namespace DindinAPI
 
             app.UseRouting();
 
-            app.UseCors(options =>
-            {
-                options.AllowAnyOrigin();
-                options.WithOrigins("http://localhost:8080/");
-                options.AllowAnyHeader();
-                options.AllowAnyMethod();
-            });
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 
