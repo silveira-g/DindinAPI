@@ -16,10 +16,8 @@ Pacotes e requerimentos:
 * .net 5.0.
 * NuGet Package Manager.
 * Microsoft.EntityFrameworkCore.Design 5.0.10.
-* Microsoft.EntityFrameworkCore.inMemory 5.0.10.
 * Microsoft.EntityFrameworkCore.SqlServer 5.0.10.
 * Microsoft.EntityFrameworkCore.Tools 5.0.10.
-* Microsoft.VisualStudio.Web.CodeGenerator.Design 5.0.2
 
 ***
 <br>
